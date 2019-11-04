@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import RecipeList from './components/RecipeList';
+import RecipeDetails from './components/RecipeDetails';
 
 function App() {
 	return (
 		<div className="App">
-			<h1>Recipes</h1>
+			<RecipeList />
+			<RecipeDetails />
 		</div>
 	);
 }
