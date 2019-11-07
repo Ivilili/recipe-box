@@ -1,7 +1,21 @@
+* {
+	box-sizing: border-box;
+}
 body {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-family: 'Permanent Marker', cursive;
 	background-color: #fadadd;
 }
-.App {
+.header {
 	text-align: center;
+	padding: 32px;
+	color: #00ccec;
+	font-size: 1.7rem;
+	font-weight: 400;
+}
+.row {
+	display: -ms-flexbox; /* IE10 */
+	display: flex;
+	-ms-flex-wrap: wrap; /* IE10 */
+	flex-wrap: wrap;
+	padding: 0 4px;
 }
