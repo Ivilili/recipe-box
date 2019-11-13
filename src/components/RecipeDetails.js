@@ -51,7 +51,7 @@ export default class RecipeDetails extends Component {
 		return (
 			<React.Fragment>
 				<div className="container">
-					<div className="row">
+					<div className="row active-recipe">
 						<div className="col-10 mx-auto col-md-6 my-3">
 							<button
 								type="button"
@@ -60,11 +60,11 @@ export default class RecipeDetails extends Component {
 							>
 								Back to recipe list
 							</button>
-							<img src={image_url} className="d-block w-100" alt="recipe" />
+							<img src={image_url} className="d-block w-100 active-recipe__img" alt="recipe" />
 						</div>
 						{/* details */}
 						<div className="col-10 mx-auto col-md-6 my-3">
-							<h6 className="text-uppercase">{title}</h6>
+							<h6 className="text-uppercase active-recipe__title">{title}</h6>
 							<h6 className="text-warning text-capitalize"> Provided by {publisher}</h6>
 							<a
 								href={publisher_url}
