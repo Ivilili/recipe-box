@@ -27,7 +27,7 @@ export default class Search extends Component {
 								/>
 								<div className="input-group-append">
 									<button type="submit" className=" btn-primary text-white">
-										<i className="fas fa-search" />
+										Search
 									</button>
 								</div>
 							</div>

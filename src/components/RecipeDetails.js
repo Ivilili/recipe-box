@@ -1,31 +1,12 @@
 import React, { Component } from 'react';
-import { recipe } from '../tempDetails';
+import { Link } from 'react-router-dom';
 
 export default class RecipeDetails extends Component {
-	/* constructor(props) {
-		super(props);
-		this.state = {
-			recipe: recipe,
-			url: `https://www.food2fork.com/api/get?key=786eea97a948bac7e60e03cdc2de87f0&rId=${this.props.id}`
-		};
-	}
-
-	async componentDidMount() {
-		try {
-			const data = await fetch(this.state.url);
-			const jsonData = await data.json();
-			this.setState({
-				recipe: jsonData.recipe
-			});
-		} catch (err) {
-			console.log(err);
-		}
-	} */
 	state = {
-		recipe: recipe
+		recipe: []
 	};
 	async componentDidMount() {
-		console.log(this.props.id);
+		console.log(this.props);
 		const id = this.props.id;
 		const url = `https://www.food2fork.com/api/get?key=786eea97a948bac7e60e03cdc2de87f0&rId=${id}`;
 		try {
@@ -45,20 +26,15 @@ export default class RecipeDetails extends Component {
 	}
 	render() {
 		const { image_url, publisher, publisher_url, source_url, title, ingredients } = this.state.recipe;
-
-		const { handleIndex } = this.props;
+		console.log(this.state.recipe);
 
 		return (
 			<React.Fragment>
 				<div className="container">
 					<div className="row active-recipe">
 						<div className="col-10 mx-auto col-md-6 my-3">
-							<button
-								type="button"
-								className="btn btn-warning mb-5 text-capitalize"
-								onClick={() => handleIndex(1)}
-							>
-								Back to recipe list
+							<button type="button" className="btn btn-warning mb-5 text-capitalize">
+								<Link to="/">Go Home</Link>
 							</button>
 							<img src={image_url} className="d-block w-100 active-recipe__img" alt="recipe" />
 						</div>
@@ -86,13 +62,14 @@ export default class RecipeDetails extends Component {
 							</a>
 							<ul className="list-group mt-4">
 								<h2 className="mt-3 mb-4">Ingredients</h2>
-								{ingredients.map((item, index) => {
+								{/*	{ingredients.map((item, index) => {
 									return (
 										<li key={index} className="list-group-item">
 											{item}
 										</li>
 									);
 								})}
+								 */}
 							</ul>
 						</div>
 					</div>

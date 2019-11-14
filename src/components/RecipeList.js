@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
 import Search from './Search';
+import Spinner from './Spinner';
 
 export default class RecipeList extends Component {
 	render() {
@@ -8,6 +9,7 @@ export default class RecipeList extends Component {
 		return (
 			<React.Fragment>
 				<Search value={value} handleChange={handleChange} handleSubmit={handleSubmit} />
+
 				<div className="container my-5 header">
 					<div className="row">
 						<div className="col-10 mx-auto col-md-6 text-center text-uppercase mb-3">
@@ -19,7 +21,13 @@ export default class RecipeList extends Component {
 							<h1 className="text-danger text-center">{error}</h1>
 						) : (
 							recipes.map((recipe) => {
-								return <Recipe key={recipe.recipe_id} recipe={recipe} handleDetails={handleDetails} />;
+								if (recipes === undefined || recipes.length === 0) {
+									return <Spinner />;
+								} else {
+									return (
+										<Recipe key={recipe.recipe_id} recipe={recipe} handleDetails={handleDetails} />
+									);
+								}
 							})
 						)}
 					</div>
