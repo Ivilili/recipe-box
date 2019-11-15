@@ -6,8 +6,8 @@ export default class Search extends Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="col-10 mx-auto col-md-8 mt-5 text-center">
-						<h1 className="text-capitalize">
+					<div className="col-10 mx-auto col-md-8 mt-5 text-center App-header">
+						<h1 className="text-capitalize App-title">
 							{' '}
 							Search for recipe with <strong className="text-danger">Food2Fork</strong>
 						</h1>
@@ -21,12 +21,12 @@ export default class Search extends Component {
 									name="search"
 									title="Search"
 									placeholder="Search..."
-									className="form-control"
+									className="form-control form__input"
 									value={value}
 									onChange={handleChange}
 								/>
 								<div className="input-group-append">
-									<button type="submit" className=" btn-primary text-white">
+									<button type="submit" className=" form__button">
 										Search
 									</button>
 								</div>

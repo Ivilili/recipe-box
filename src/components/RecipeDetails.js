@@ -30,39 +30,39 @@ export default class RecipeDetails extends Component {
 
 		return (
 			<React.Fragment>
-				<div className="container">
-					<div className="row active-recipe">
-						<div className="col-10 mx-auto col-md-6 my-3">
-							<button type="button" className="btn btn-warning mb-5 text-capitalize">
-								<Link to="/">Go Home</Link>
-							</button>
-							<img src={image_url} className="d-block w-100 active-recipe__img" alt="recipe" />
-						</div>
-						{/* details */}
-						<div className="col-10 mx-auto col-md-6 my-3">
-							<h6 className="text-uppercase active-recipe__title">{title}</h6>
-							<h6 className="text-warning text-capitalize"> Provided by {publisher}</h6>
-							<a
-								href={publisher_url}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="btn btn-primary mt-2 text-capitalize"
-								alt="recipe"
-							>
-								publisher webpage
-							</a>
-							<a
-								href={source_url}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="btn btn-success mt-2 mx-3 text-capitalize"
-								alt="recipe"
-							>
-								recipe url
-							</a>
-							<ul className="list-group mt-4">
-								<h2 className="mt-3 mb-4">Ingredients</h2>
-								{/*	{ingredients.map((item, index) => {
+				<div className="card active-recipe">
+					<img src={image_url} className="card-img-top active-recipe__img" alt="recipe" />
+
+					{/* details */}
+					<div className="card-body">
+						<h6 className="card title active-recipe__title">{title}</h6>
+						<h6 className="text-warning text-capitalize active-recipe__publisher">
+							Provided by {publisher}
+						</h6>
+						<a
+							href={publisher_url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="btn mt-2 text-capitalize"
+							alt="recipe"
+						>
+							publisher webpage
+						</a>
+						<a
+							href={source_url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="card-link"
+							alt="recipe"
+						>
+							recipe url
+						</a>
+						<button type="button" className="card-link active-recipe__button">
+							<Link to="/">Go Home</Link>
+						</button>
+						<ul className="list-group mt-4">
+							<h2 className="mt-3 mb-4">Ingredients</h2>
+							{/*	{ingredients.map((item, index) => {
 									return (
 										<li key={index} className="list-group-item">
 											{item}
@@ -70,8 +70,7 @@ export default class RecipeDetails extends Component {
 									);
 								})}
 								 */}
-							</ul>
-						</div>
+						</ul>
 					</div>
 				</div>
 			</React.Fragment>
