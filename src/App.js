@@ -3,15 +3,17 @@ import React, { Component } from 'react';
 import './App.css';
 import RecipeList from './components/RecipeList';
 //import RecipeDetails from './components/RecipeDetails';
+const APP_ID = 'adaa83af';
+const APP_KEY = '7d25fa4bcf6fd1cd5502176b4c2565ae';
 
 class App extends Component {
 	state = {
 		recipes: [],
-		url: 'https://www.food2fork.com/api/search?key=786eea97a948bac7e60e03cdc2de87f0',
-		base_url: 'https://www.food2fork.com/api/search?key=786eea97a948bac7e60e03cdc2de87f0',
+		query: '',
+		url: `https://api.edamam.com/search?q=${this.query}&app_id=${APP_ID}&app_key=${APP_KEY}`,
+		base_url: 'https://api.edamam.com/search',
 		id: null,
 		search: '',
-		query: '&q=',
 		error: ''
 	};
 
@@ -19,8 +21,8 @@ class App extends Component {
 		try {
 			const data = await fetch(this.state.url);
 			const jsonData = await data.json();
-
-			if (jsonData.recipes.length === 0) {
+			console.log(jsonData.hits);
+			if (jsonData.hits.length === 0) {
 				this.setState(() => {
 					return {
 						error: 'No results, try again'
@@ -28,7 +30,7 @@ class App extends Component {
 				});
 			} else {
 				this.setState(() => {
-					return { recipes: jsonData.recipes };
+					return { recipes: jsonData.hits };
 				});
 			}
 		} catch (err) {
@@ -51,11 +53,11 @@ class App extends Component {
 	};
 	handleSubmit = (e) => {
 		e.preventDefault();
-		const { base_url, query, search } = this.state;
+		const { query, search } = this.state;
 		this.setState(
 			() => {
 				return {
-					url: `${base_url}${query}${search}`,
+					query: search,
 					search: ''
 				};
 			},
