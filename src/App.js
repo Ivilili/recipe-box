@@ -10,19 +10,17 @@ class App extends Component {
 	state = {
 		recipes: [],
 		query: '',
-		url: `https://api.edamam.com/search?q=${this.query}&app_id=${APP_ID}&app_key=${APP_KEY}`,
-		base_url: 'https://api.edamam.com/search',
 		id: null,
 		search: '',
 		error: ''
 	};
 
 	async getRecipes() {
+		const { query } = this.state;
 		try {
-			const data = await fetch(this.state.url);
+			const data = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
 			const jsonData = await data.json();
-			console.log(jsonData.hits);
-			if (jsonData.hits.length === 0) {
+			if (jsonData.hits.length === undefined) {
 				this.setState(() => {
 					return {
 						error: 'No results, try again'
@@ -53,18 +51,19 @@ class App extends Component {
 	};
 	handleSubmit = (e) => {
 		e.preventDefault();
-		const { query, search } = this.state;
+		const { search } = this.state;
 		this.setState(
 			() => {
 				return {
-					query: search,
-					search: ''
+					query: search
 				};
 			},
 			() => {
 				this.getRecipes();
 			}
 		);
+
+		console.log(this.state.query);
 	};
 
 	render() {
