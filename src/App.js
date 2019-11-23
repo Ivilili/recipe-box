@@ -5,11 +5,10 @@ import RecipeList from './components/RecipeList';
 //import RecipeDetails from './components/RecipeDetails';
 const APP_ID = 'adaa83af';
 const APP_KEY = '7d25fa4bcf6fd1cd5502176b4c2565ae';
-
 class App extends Component {
 	state = {
 		recipes: [],
-		query: '',
+		query: 'chicken',
 		id: null,
 		search: '',
 		error: ''
