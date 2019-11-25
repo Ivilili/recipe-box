@@ -19,7 +19,7 @@ export default class Recipe extends Component {
 							}
 						}}
 					>
-						<div className="card">
+						<div className="card cards">
 							<img src={image} className="img-card-top image" style={{ height: 'auto' }} alt="recipe" />
 							<div className="card-body text-capitalize">
 								<h2>{label}</h2>

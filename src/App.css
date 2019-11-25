@@ -68,20 +68,6 @@ button:focus {
 	padding: 1.8rem 0 0.2rem 0;
 }
 
-.recipes__subtitle {
-	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 0.8rem;
-	letter-spacing: 2px;
-}
-
-.recipes__subtitle span {
-	text-transform: none;
-	font-weight: 400;
-	font-size: 0.8rem;
-	letter-spacing: 1px;
-}
-
 .form__input {
 	background: transparent;
 	border: 0;
@@ -112,8 +98,7 @@ input[type=text]:focus {
 	color: #170a19;
 }
 
-.card {
-	border-radius: 8px;
+.cards {
 	background: #ffffff;
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
 	text-align: center;
@@ -122,27 +107,29 @@ input[type=text]:focus {
 	cursor: pointer;
 	margin: 5px;
 }
+.cards,
 .card h2 {
 	font-family: 'Dancing Script', cursive;
 }
-.image {
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-}
-.card:hover {
+
+.cards:hover {
 	transform: scale(1.1);
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
-/******** RECIPE.js ********/
+/******** RECIPE Details ********/
 
 .active-recipe {
-	margin: 0 auto;
-	width: 60%;
+	margin: auto;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	cursor: pointer;
 }
 
 .active-recipe__img {
-	height: 500px !important;
+	width: 100%;
+	height: auto;
 }
 
 .active-recipe__title {
@@ -151,34 +138,12 @@ input[type=text]:focus {
 	margin: 1rem 0;
 }
 
-.active-recipe__publisher,
-.active-recipe__website {
-	text-transform: uppercase;
-	font-size: 1.2rem;
-	margin-bottom: 1rem;
-}
-
-.active-recipe__publisher span {
-	text-transform: none;
-	font-weight: 300;
-	letter-spacing: 2px;
-	margin-left: 5px;
-}
-
-.active-recipe__website span {
-	text-transform: lowercase;
-	font-weight: 300;
-	letter-spacing: 2px;
-	color: #70416d;
-	margin-left: 10px;
-}
-
 .active-recipe__button {
-	border: solid 2px #70416d;
+	border: solid 2px #816852;
 	background: transparent;
 	padding: 0.2rem 0.9rem;
 	margin: 0 0.2rem;
-	border-radius: 1px;
+	border-radius: 3px;
 	font-size: 1rem;
 	text-transform: uppercase;
 	font-weight: 500;
