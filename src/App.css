@@ -48,26 +48,6 @@ button:focus {
 	margin-left: 0.7rem;
 }
 
-.recipes__box {
-	background: #d3d4da;
-	padding-bottom: 2rem;
-	border-radius: 5px;
-	box-shadow: -1px 2px 34px -13px rgba(0, 0, 0, 0.75);
-	text-align: left;
-	overflow: hidden;
-}
-
-.recipe__text {
-	margin-left: 15px;
-}
-
-.recipes__title {
-	color: #70416d;
-	text-transform: uppercase;
-	font-size: 1.1rem;
-	padding: 1.8rem 0 0.2rem 0;
-}
-
 .form__input {
 	background: transparent;
 	border: 0;
@@ -120,15 +100,19 @@ input[type=text]:focus {
 .yield,
 .cal {
 	color: #442e26;
-	font-family: 'Playfair Display', serif;
-	border-bottom: solid 2px #d5b794;
+	border-top: solid 2px #d5b794;
 	padding: 0.4rem 0.6rem;
 	margin: 0 0.2rem;
 	border-radius: 1px;
-	font-size: 0.8rem;
-	text-transform: uppercase;
+	font-size: 1rem;
 	font-weight: bold;
 	margin-left: 0.7rem;
+}
+.health-labels {
+	color: #8c8c90;
+	font-family: 'Playfair Display', serif;
+	font-size: 0.6rem;
+	text-transform: uppercase;
 }
 
 /******** RECIPE Details ********/
