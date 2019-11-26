@@ -110,11 +110,25 @@ input[type=text]:focus {
 .cards,
 .card h2 {
 	font-family: 'Dancing Script', cursive;
+	color: #d5b794;
 }
 
 .cards:hover {
 	transform: scale(1.1);
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+.yield,
+.cal {
+	color: #442e26;
+	font-family: 'Playfair Display', serif;
+	border-bottom: solid 2px #d5b794;
+	padding: 0.4rem 0.6rem;
+	margin: 0 0.2rem;
+	border-radius: 1px;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-left: 0.7rem;
 }
 
 /******** RECIPE Details ********/
@@ -147,4 +161,7 @@ input[type=text]:focus {
 	font-size: 1rem;
 	text-transform: uppercase;
 	font-weight: 500;
+}
+.active-recipe__button:hover {
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
 }

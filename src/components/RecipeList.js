@@ -17,6 +17,7 @@ export default function RecipeList({ recipes, handleDetails, value, handleSubmit
 								<Recipe
 									key={index}
 									label={recipe.recipe.label}
+									yield={recipe.recipe.yield}
 									calories={recipe.recipe.calories}
 									image={recipe.recipe.image}
 									ingredients={recipe.recipe.ingredients}

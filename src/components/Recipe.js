@@ -23,7 +23,8 @@ export default class Recipe extends Component {
 							<img src={image} className="img-card-top image" style={{ height: 'auto' }} alt="recipe" />
 							<div className="card-body text-capitalize">
 								<h2>{label}</h2>
-								<h6 className="text-warning">Calories: {calories} </h6>
+								<h6 className="d-inline p-1 yield">Number of Servings: {this.props.recipe.yield} </h6>
+								<h6 className="d-inline p-1 cal">Calories: {Math.round(calories)} </h6>
 							</div>
 						</div>
 					</Link>

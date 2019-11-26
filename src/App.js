@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import RecipeList from './components/RecipeList';
-//import RecipeDetails from './components/RecipeDetails';
+
 const APP_ID = 'adaa83af';
 const APP_KEY = '7d25fa4bcf6fd1cd5502176b4c2565ae';
 class App extends Component {
 	state = {
 		recipes: [],
 		query: 'chicken',
-		id: null,
 		search: '',
 		error: ''
 	};
@@ -38,11 +36,6 @@ class App extends Component {
 		this.getRecipes();
 	}
 
-	handleDetails = (id) => {
-		this.setState({
-			details_id: id
-		});
-	};
 	handleChange = (e) => {
 		this.setState({
 			search: e.target.value
@@ -61,16 +54,14 @@ class App extends Component {
 				this.getRecipes();
 			}
 		);
-
-		console.log(this.state.query);
 	};
 
 	render() {
+		console.log(this.state.recipes);
 		return (
 			<div className="App">
 				<RecipeList
 					recipes={this.state.recipes}
-					handleDetails={this.handleDetails}
 					value={this.state.search}
 					handleChange={this.handleChange}
 					handleSubmit={this.handleSubmit}
