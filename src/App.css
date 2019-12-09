@@ -27,7 +27,7 @@ button:focus {
 	margin-bottom: 2rem;
 }
 .jumbotron {
-	background: url('./components/img/bg.jpg') no-repeat center center;
+	background: url("https://i.postimg.cc/Kvwnftnp/bg.jpg") no-repeat center center;
 	background-size: cover;
 }
 
