@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { GiHotMeal, GiMeal } from 'react-icons/gi';
 
 export default class Recipe extends Component {
 	render() {
@@ -34,7 +35,10 @@ export default class Recipe extends Component {
 										);
 									})}
 								</div>
-								<h6 className="d-inline p-2 yield">Number of Servings: {this.props.recipe.yield} </h6>
+								<h6 className="d-inline p-2 yield">
+									Servings:
+									{this.props.recipe.yield}
+								</h6>
 								<h6 className="d-inline p-2 cal">Calories: {Math.round(calories)} </h6>
 							</div>
 						</div>

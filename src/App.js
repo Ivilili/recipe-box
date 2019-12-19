@@ -7,7 +7,7 @@ const APP_KEY = '7d25fa4bcf6fd1cd5502176b4c2565ae';
 class App extends Component {
 	state = {
 		recipes: [],
-		query: 'chicken',
+		query: 'mix',
 		search: '',
 		error: ''
 	};
@@ -15,7 +15,9 @@ class App extends Component {
 	async getRecipes() {
 		const { query } = this.state;
 		try {
-			const data = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+			const data = await fetch(
+				`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=50`
+			);
 			const jsonData = await data.json();
 			if (jsonData.hits.length === undefined) {
 				this.setState(() => {

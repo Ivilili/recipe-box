@@ -94,9 +94,9 @@ input[type=text]:focus {
 }
 
 .cards:hover {
-	transform: scale(1.1);
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
+
 .yield,
 .cal {
 	color: #442e26;
