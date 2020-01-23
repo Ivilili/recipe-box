@@ -7,7 +7,7 @@ export default function RecipeList({ recipes, handleDetails, value, handleSubmit
 		<React.Fragment>
 			<Search value={value} handleChange={handleChange} handleSubmit={handleSubmit} />
 
-			<div className="container my-5 header">
+			<div className="m-1">
 				<div className="row">
 					{error ? (
 						<h1 className="text-danger text-center">{error}</h1>
