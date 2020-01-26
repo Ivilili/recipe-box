@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import RecipeList from './components/RecipeList';
+import Pagination from './components/Pagination';
 
-//const APP_ID = 'adaa83af';
-//const APP_KEY = '7d25fa4bcf6fd1cd5502176b4c2565ae';
 class App extends Component {
 	state = {
 		recipes: [],
 		query: 'mix',
 		search: '',
 		currentPage: 1,
-		recipesPerPage: 10,
+		recipesPerPage: 9,
 		error: ''
 	};
 
@@ -60,19 +59,30 @@ class App extends Component {
 			}
 		);
 	};
+	//change page
+	paginate = (pageNumber) => {
+		this.setState({
+			currentPage: pageNumber
+		});
+	};
 
 	render() {
-		console.log(process.env.REACT_APP_APP_ID);
+		const { currentPage, recipesPerPage, recipes } = this.state;
+		//Get current recipes
+		const indexOfLastRecipe = currentPage * recipesPerPage;
+		const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
+		const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
 
 		return (
 			<div className="App">
 				<RecipeList
-					recipes={this.state.recipes}
+					recipes={currentRecipes}
 					value={this.state.search}
 					handleChange={this.handleChange}
 					handleSubmit={this.handleSubmit}
 					error={this.state.error}
 				/>
+				<Pagination recipesPerPage={recipesPerPage} totalRecipes={recipes.length} paginate={this.paginate} />
 			</div>
 		);
 	}
