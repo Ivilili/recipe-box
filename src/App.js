@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import RecipeList from './components/RecipeList';
 
-const APP_ID = 'adaa83af';
-const APP_KEY = '7d25fa4bcf6fd1cd5502176b4c2565ae';
+//const APP_ID = 'adaa83af';
+//const APP_KEY = '7d25fa4bcf6fd1cd5502176b4c2565ae';
 class App extends Component {
 	state = {
 		recipes: [],
 		query: 'mix',
 		search: '',
+		currentPage: 1,
+		recipesPerPage: 10,
 		error: ''
 	};
 
@@ -16,7 +18,8 @@ class App extends Component {
 		const { query } = this.state;
 		try {
 			const data = await fetch(
-				`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=50`
+				`https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env
+					.REACT_APP_APP_KEY}&from=0&to=50`
 			);
 			const jsonData = await data.json();
 			if (jsonData.hits.length === undefined) {
@@ -59,7 +62,8 @@ class App extends Component {
 	};
 
 	render() {
-		console.log(this.state.recipes);
+		console.log(process.env.REACT_APP_APP_ID);
+
 		return (
 			<div className="App">
 				<RecipeList
