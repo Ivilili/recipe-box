@@ -1,5 +1,5 @@
 body {
-	background: #8c8c90;
+	background: #d8d9de;
 }
 
 img {
@@ -85,11 +85,11 @@ input[type=text]:focus {
 	transition: all .2s ease-in-out;
 	cursor: pointer;
 }
-.cards,
-.card h2 {
+
+.card h2,
+.cards h2 {
 	font-family: 'Dancing Script', cursive;
-	color: #ffffff;
-	border-bottom: solid 2px #d5b794;
+	color: #404849;
 }
 
 .cards:hover {
@@ -98,12 +98,14 @@ input[type=text]:focus {
 
 .yield,
 .cal {
-	color: #ffffff;
+	color: #bf9b81;
 	padding: 0.4rem 0.6rem;
-	margin: 0 0.2rem;
+	margin: 4rem 0.4rem 0 0.7rem;
 	font-size: 1rem;
 	font-weight: bold;
-	margin-left: 0.7rem;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
 }
 .health-labels {
 	color: #8c8c90;
@@ -112,7 +114,7 @@ input[type=text]:focus {
 	text-transform: uppercase;
 }
 
-/******** RECIPE Details ********/
+/* RECIPE Details */
 
 .active-recipe {
 	margin: auto;

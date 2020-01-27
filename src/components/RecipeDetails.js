@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { FaHome } from 'react-icons/fa';
 
 export default class RecipeDetails extends Component {
 	render() {
@@ -7,11 +8,16 @@ export default class RecipeDetails extends Component {
 
 		return (
 			<React.Fragment>
-				<div className="card m-3 active-recipe">
+				<div className="card m-4 active-recipe">
 					<div className="row no-gutters">
 						<div className="col-md-4">
 							<img src={image} className="card-img-top active-recipe__img" alt={recipe} />
 							<h6 className="card-title active-recipe__title">{recipe}</h6>
+							<button type="button" className="card-link mt-2 active-recipe__button">
+								<Link to="/">
+									<FaHome />
+								</Link>
+							</button>
 						</div>
 						<div className="col-md-8">
 							<div className="card-body">
@@ -25,9 +31,6 @@ export default class RecipeDetails extends Component {
 										);
 									})}
 								</ul>
-								<button type="button" className="card-link mt-2 active-recipe__button">
-									<Link to="/">Recipes</Link>
-								</button>
 							</div>
 						</div>
 					</div>

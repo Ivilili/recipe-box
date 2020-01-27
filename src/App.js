@@ -59,7 +59,7 @@ class App extends Component {
 			}
 		);
 	};
-	//change page
+
 	paginate = (pageNumber) => {
 		this.setState({
 			currentPage: pageNumber

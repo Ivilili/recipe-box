@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-//import { GiHotMeal, GiMeal } from 'react-icons/gi';
+import { FaUser, FaFire } from 'react-icons/fa';
 
 export default class Recipe extends Component {
 	render() {
@@ -22,7 +22,7 @@ export default class Recipe extends Component {
 					>
 						<div className="card h-100 cards">
 							<img src={image} className="img-card-top image" style={{ height: 'auto' }} alt="recipe" />
-							<div className="card-body card-img-overlay">
+							<div className="card-body">
 								<h2 title={label} className="mb-0">
 									{label.length < 20 ? `${label}` : `${label.substring(0, 18)}...`}
 								</h2>
@@ -35,14 +35,15 @@ export default class Recipe extends Component {
 										);
 									})}
 								</div>
-								<h6 className="d-inline p-2 yield">
-									Servings:
+								<h6 className="d-inline p-1 yield">
+									<FaUser />
+									<div className="d-inline">Servings: </div>
 									{this.props.recipe.yield}
 								</h6>
-								<h6 className="d-inline p-2 cal">Calories: {Math.round(calories)} </h6>
+								<h6 className="d-inline p-2 cal">
+									<FaFire /> <div className="d-inline">Calories: </div> {Math.round(calories)}
+								</h6>
 							</div>
-							<div className="gradient-overlay" />
-							<div className="color-overlay" />
 						</div>
 					</Link>
 				</div>
